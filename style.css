@@ -1,79 +1,31 @@
-* 
-
-
-main{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+/*
+project name: Bootcamp Desenvolvimento de web site
+authors: Allisson, Amanda, Gabriel, Gustavo, Victor e Vinicius.
+aniversity: Unisagrado
+*/
+@font-face {
+  font-family: Cartaz;
+  src: url(fonts/CARTAZ__.TTF);
 }
+*{ padding:0; margin:0;}
+body { background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0,0,0,0.7)), url("img/back04.jpg"); background-size:cover; height:100vh;}
+#main { margin:0 auto;}
+#main .seta { position:absolute; padding:15px; margin-top:20px; margin-left:20px; box-shadow:3px -3px 0 1px #ffffff inset; border:solid transparent; border-width:0 0 2px 2px; transform:rotate(45deg); cursor:pointer;}
 
-body {
-    height: 100vh;
-  
-    background-color: rgb(94, 189, 176);
-}
-h1{
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 40pt;
-    color: rgb(0, 0, 0);
-}
+#main h1{ text-align:center; font-family:"Cartaz"; padding-top:50px; font-size:100px; color:#fff; text-transform:uppercase;}
+.cronometro { text-align:center; margin-top:40px; margin-bottom:40px;}
+#tempo { font-family:"Arial"; color:#fff; font-size:40px;}
+#main h5 { margin:0 auto; width:max-content; padding:8px 15px 7px 15px; border-radius:8px; font-family:"Arial"; color:#fff; font-size:15px; text-transform:uppercase;}
+.btn-easy { background:#47c100;}
+.btn-medium { background:#bcb906;}
+.btn-hard { background:#c10000;}
+#main h4 { font-family:"Arial"; color:#fff; margin-top:10px; font-size:15px;}
 
-.memory-game {
-    min-width:320px;
-    max-width: 820px;
-    height: 45%;
-    width: 100%;
-    margin: auto;
-    display: flex;
-    flex-wrap:wrap;
-    perspective: 1000px; /* perspectiva do usuario no eixo z, quanto maior, maior o efeito da perspectiva */
-}
-.card-border {
-    position: absolute;
-    padding: 2px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 2px  rgb(13, 36, 240); /* Ajuste a espessura e cor conforme necessário */
-    border-radius: 5px;
-    z-index: -1; /* Garante que a borda fique atrás do conteúdo */
-  }
-
-.card:active{
-    transform: scale(0.97);
-    transition: transform .2s;
-}
-
+main { padding-bottom:100px;}
+.memory-game { min-width:320px; max-width: 820px; height:100%; width:100%; margin:auto; display:flex; flex-wrap:wrap; perspective:1000px;}
+.card { height:calc( 52% - 10px); width:calc(25% - 10px); margin:5px; position:relative; box-shadow:1px 1px 1px rgba(0,0,0,.3); cursor:pointer; transform:scale(1); transform-style:preserve-3d; transition:transform .5s;}
+.card:active { transform:scale(0.97); transition:transform .2s;}
 .card-front,
-.card-back {
-  width: 100%;
-  height: 100%;
-  padding: 2px;
-  position: absolute;
-  border-radius: 5px;
-  background: white;
-  backface-visibility: hidden; /* todo elemento tem uma frente e um verso (ao contrario, como um espelho.) essa propriedade retira o verso */
-}
-
-.card-front {
-    transform: rotateY(180deg); /* antes, o verso aparecia transparente, pois ambas as imagens tem position absolute, ao girar no eixo Y, elas ficaram com os versos virados */
-}
-
-/* flip card animation */
-
-.card.flip {
-    transform: rotateY(180deg);
-}
-.container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .cronometro {
-    text-align: center;
-  }
-  
-  #tempo {
-    font-size: 3rem;
-  }
+.card-back { width:100%; height:100%; position:absolute; border-radius:8px; backface-visibility:hidden;}
+.card-front { transform: rotateY(180deg);}
+.card.flip { transform: rotateY(180deg);}

@@ -1,4 +1,5 @@
 const cards = document.querySelectorAll('.card');
+const spanplayer = document.querySelector('.player');
 let hasFlippedCard = false;
 let firstCard, secondCard;
 let lockBoard = false;
@@ -47,7 +48,7 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 1500);
+    }, 800);
 }
 
 //função que reseta o tabuleiro
@@ -93,6 +94,9 @@ function atualizarTempo() {
 }
 
 // Inicia o cronômetro automaticamente ao carregar a página
+
 window.onload = () => {
+spanplayer.innerHTML = localStorage.getItem('player);')
+
   intervalo = setInterval(atualizarTempo, 1000);
 };

@@ -32,6 +32,13 @@ button {
     font-size: 15px;
     margin-bottom: 30px;
     letter-spacing: 4px;
+    padding: 15px; 
+}
+
+@media (max-width: 768px) { 
+    button {
+        width: 100%; 
+    }
 }
 
 #facil{
